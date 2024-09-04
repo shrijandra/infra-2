@@ -6,7 +6,7 @@ orbs:
 workflows:
   deploy_infra:
     jobs:
-      - terraform/validate:
+      - terraform/init:
           checkout: true
           context: terraform
       - terraform/plan:
@@ -14,7 +14,7 @@ workflows:
           context: terraform
           persist-workspace: true
           requires:
-            - terraform/validate
+            - terraform/init
       - terraform/apply:
           attach-workspace: true
           context: terraform
