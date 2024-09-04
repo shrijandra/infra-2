@@ -12,7 +12,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "deopsinfra-2-tf-state"
+    bucket = "devopsinfra-2-tf-state"
     key = "platform.tfstate"
     region = "us-east-1"    
   }
