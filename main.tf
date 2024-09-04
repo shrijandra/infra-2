@@ -1,5 +1,5 @@
 provider "aws" {
-    region = "us-east-1"
+    region = "us-east-2"
   
 }
 
@@ -12,9 +12,16 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "deopsinfra-2-tf-state"
+    bucket = "devopsinfra-2-tf-state"
     key = "platform.tfstate"
-    region = "us-east-1"    
+    region = "us-east-2"    
   }
 }
 
+resource "aws_instance" "test_server" {
+  ami = "ami-0490fddec0cbeb88b"
+  instance_type = "t2.micro"
+  subnet_id = "subnet-0ecf425ee928af0a7"
+  associate_public_ip_address = true
+  
+}
