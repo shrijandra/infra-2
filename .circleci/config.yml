@@ -22,4 +22,4 @@ workflows:
             branches:
               only: main
           requires:
-            - hold-apply 
+            - terraform/plan
