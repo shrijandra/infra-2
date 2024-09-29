@@ -12,13 +12,13 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "devopsinfra-2-tf-state"
+    bucket = "devops-tf-state-2"
     key = "platform.tfstate"
     region = "us-east-2"    
   }
 }
 
-#to delete resources
+#to deletecreate resources
 resource "aws_instance" "test_server" {
   ami = "ami-0490fddec0cbeb88b"
   instance_type = "t2.micro"
